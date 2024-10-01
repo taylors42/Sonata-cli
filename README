@@ -1,0 +1,57 @@
+# Sonata 🎶
+
+**Sonata** is a powerful and user-friendly Command-Line Interface (CLI) music player built with Go. Designed for music enthusiasts who prefer the simplicity and efficiency of the terminal, Sonata offers seamless navigation through your music library, playlists, albums, and artists.
+
+## 📋 Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Directory Structure](#directory-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+## 🎤 Introduction
+
+Sonata aims to provide a minimalist yet feature-rich music playing experience directly from a CLI. Whether you're managing a vast collection of songs or curating personalized playlists, Sonata offers intuitive commands and handlers to enhance your music journey.
+
+## ⭐ Features
+
+Sonata is continuously evolving. Here's a snapshot of its current capabilities and upcoming features:
+
+### Current Features
+
+- [ ] **Music Handler**
+  - Play, pause, stop, and navigate through your music tracks.
+  - Support for various audio formats.
+  
+### Upcoming Features
+
+- [ ] **Playlist Handler**
+  - Create, edit, and manage multiple playlists.
+  - Add or remove songs from playlists.
+  - Get sounds by playlist
+  
+- [ ] **Albums Handler**
+  - Organize music by albums.
+  - Browse and play entire albums with ease.
+  - Get sounds by album
+  
+- [ ] **Artists Handler**
+  - Manage music based on artists.
+  - View artist discographies and related tracks.
+
+## 🚀 Installation
+
+### Prerequisites
+
+- **Go**: Ensure you have Go installed. You can download it from [the official website](https://golang.org/dl/).
+
+### Steps
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/taylors42/Sonata-cli
+   cd sonata
