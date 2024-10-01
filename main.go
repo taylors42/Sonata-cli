@@ -13,7 +13,6 @@ import (
 func main() {
 	database.ConnectToDb()
 
-	// Define the menu options
 	menuOptions := []string{
 		"Music List",
 		"Playlists",
@@ -23,7 +22,6 @@ func main() {
 		"Exit",
 	}
 
-	// Create a prompt for the menu
 	prompt := promptui.Select{
 		Label: "Select Option",
 		Items: menuOptions,
