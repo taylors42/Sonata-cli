@@ -32,11 +32,10 @@ Sonata is continuously evolving. Here's a snapshot of its current capabilities a
   - Create, edit, and manage multiple playlists.
   - Add or remove songs from playlists.
   - Get sounds by playlist
-  
-- [ ] **Albums Handler**
-  - Organize music by albums.
-  - Browse and play entire albums with ease.
-  - Get sounds by album
+
+- [ ] **Edit Handler**
+  - Add, edit, and remove music album photo.
+  - Sync with spotify.
   
 - [ ] **Artists Handler**
   - Manage music based on artists.
