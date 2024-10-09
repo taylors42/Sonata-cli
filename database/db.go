@@ -1,39 +1,36 @@
 package database
 
 import (
+	"database/sql"
 	"fmt"
-	"log"
-	models "sonata-cli/Models"
 
-	"gorm.io/driver/sqlite"
-	"gorm.io/gorm"
+	_ "github.com/mattn/go-sqlite3"
 )
 
-var DB *gorm.DB
-
-func ConnectToDb() {
-	var err error
-	DB, err := gorm.Open(sqlite.Open("sonata.db"), &gorm.Config{})
+func CreateDb() (*sql.DB, error) {
+	db, err := sql.Open("sqlite3", "sonata.db")
 	if err != nil {
-		fmt.Println("Falha ao conectar ao banco de dados:", err)
-		return
+		return nil, err
 	}
-
-	err = DB.AutoMigrate(
-		&models.Artist{},
-		&models.Music{},
-		&models.Playlist{},
-	)
+	defer db.Close()
+	createTablesQuery := `
+		CREATE TABLE IF NOT EXISTS music (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			title TEXT,
+			filepath TEXT,
+			artist TEXT
+		);
+		
+		CREATE TABLE IF NOT EXISTS playlist (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			name TEXT,
+			description TEXT
+		);
+	`
+	_, err = db.Exec(createTablesQuery)
 	if err != nil {
-		log.Fatalf("Falha ao migrar o banco de dados: %v", err)
+		return nil, err
 	}
-
-	fmt.Println("Migração executada com sucesso!")
-
-	// Verificar se a tabela Artist foi criada
-	if DB.Migrator().HasTable(&models.Artist{}) {
-		fmt.Println("A tabela 'Artist' foi criada com sucesso!")
-	} else {
-		fmt.Println("Falha ao criar a tabela 'Artist'.")
-	}
+	fmt.Println("Database created")
+	return db, nil
 }
